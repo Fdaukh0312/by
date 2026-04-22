@@ -1,0 +1,106 @@
+/* ========================================
+   Admin Panel — Shared Component Styles
+   (Layout sidebar/topbar styles live in Layout.vue)
+   ======================================== */
+
+.admin-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-large);
+  padding: 24px;
+  box-shadow: var(--md-sys-elevation-1);
+  border: 1px solid var(--color-outline-variant);
+  margin-bottom: 20px;
+}
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-large);
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: var(--md-sys-elevation-1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--md-sys-elevation-3);
+    transform: translateY(-2px);
+  }
+
+  &--highlight {
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #5b8dd9 100%);
+    border: none;
+
+    .stat-icon { background: rgba(255,255,255,0.2); color: #fff; }
+    .stat-value { color: #fff; }
+    .stat-label { color: rgba(255,255,255,0.72); }
+  }
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--md-sys-shape-corner-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+
+  &--green { background: rgba(11,110,79,0.1); color: #0B6E4F; }
+  &--blue { background: rgba(48,105,202,0.1); color: var(--md-sys-color-primary); }
+  &--orange { background: rgba(230,81,0,0.1); color: #E65100; }
+  &--purple { background: rgba(103,58,183,0.1); color: #7B1FA2; }
+  &--red { background: rgba(211,47,47,0.1); color: #C62828; }
+  &--teal { background: rgba(0,150,136,0.1); color: #00897B; }
+  &--gold { background: rgba(255,255,255,0.2); color: #fff; }
+}
+
+.stat-info {
+  flex: 1;
+  min-width: 0;
+
+  .stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.1;
+
+    &--money { font-size: 22px; letter-spacing: -0.5px; }
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 5px;
+  }
+}
+
+.pagination-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1280px) {
+  .stat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
